@@ -87,6 +87,45 @@ public class Picture extends SimplePicture
 	    		}
 	    	}
 		}
+	//Method to only keep blue, set red and green to zero
+	public void keepOnlyBlue() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setRed(0);
+				pixelObj.setGreen(0);
+			}
+		}
+	}
+	//Method to negate the image (set each value to 255 minus the current value)
+	public void negate() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setRed(255 - pixelObj.getRed());
+				pixelObj.setGreen(255 - pixelObj.getGreen());
+				pixelObj.setBlue(255 - pixelObj.getBlue());
+			}
+		}
+	}
+	//Method to convert image to grayscale (add all values and divide by three)
+	public void grayscale() {
+		Pixel[][] pixels = this.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				int avg = 0;
+				avg += (pixelObj.getRed() + pixelObj.getGreen()+ pixelObj.getBlue());
+				avg = avg / 3;
+				pixelObj.setRed(avg);
+				pixelObj.setGreen(avg);
+				pixelObj.setBlue(avg);
+			}
+		}
+	}
+	//Method to make the fish easier to see in the "water.jpg" image
+	public void fixUnderwater() {
+		//up blue, down green
+	}
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -203,9 +242,6 @@ public class Picture extends SimplePicture
    */
 	public static void main(String[] args) 
 		{
-	    Picture beach = new Picture("beach.jpg");
-	    beach.explore();
-	    beach.zeroBlue();
-	    beach.explore();
+			PictureTester.testGrayscale();
 		}
 	} // this } is the end of class Picture, put all new methods before this
