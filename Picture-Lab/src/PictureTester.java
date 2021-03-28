@@ -41,7 +41,7 @@ public class PictureTester
   public static void testFixUnderwater() {
     Picture water = new Picture("water.jpg");
     water.explore();
-    // water.fixUnderwater(); //A5 Ex.6
+    water.fixUnderwater(); //A5 Ex.6
     water.explore();
   }
   
@@ -52,6 +52,48 @@ public class PictureTester
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
+  }
+  
+  public static void testMirrorVerticalRightToLeft() {
+    Picture butterfly = new Picture("butterfly1.jpg");
+    butterfly.explore();
+    butterfly.mirrorVerticalRightToLeft(); //A6 Ex. 1
+    butterfly.explore();
+  }
+
+  public static void testMirrorHorizontal() {
+    Picture motorcycle = new Picture("redMotorcycle.jpg");
+    motorcycle.explore();
+    motorcycle.mirrorHorizontal(); //A6 Ex. 2
+    motorcycle.explore();
+  }
+
+  public static void testMirrorHorizontalBotToTop() {
+    Picture motorcycle = new Picture("redMotorcycle.jpg");
+    motorcycle.explore();
+    motorcycle.mirrorHorizontalBotToTop(); //A6 Ex. 3
+    motorcycle.explore();
+  }
+
+  public static void testMirrorDiagonal() {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.mirrorDiagonal(); //A6 Ex. 4
+    beach.explore();
+  }
+
+  public static void testMirrorArms() {
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorArms(); //A7 Ex.2
+    snowman.explore();
+  }
+
+  public static void testMirrorGull() {
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.mirrorGull(); //A7 Ex.3
+    seagull.explore();
   }
   
   /** Method to test mirrorTemple */
